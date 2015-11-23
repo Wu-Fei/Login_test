@@ -19,7 +19,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -323,7 +322,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // TODO: attempt authentication against a network service.
             //if(dummyUser())
             {
-                return DataBaseManager.getInstance().open(true);
+                return DataManager.getInstance().open(true);
             }
             // TODO: register the new account here.
             //return false;

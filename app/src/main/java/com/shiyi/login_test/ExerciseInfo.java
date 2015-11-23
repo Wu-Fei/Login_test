@@ -16,6 +16,7 @@ public class ExerciseInfo {
     int mTotalQuiz;
     boolean mCompleted;
     String mProgress;
+    boolean mDirty;
 
     public ExerciseInfo(int id, String name, String desc, boolean isExam, int totalQuiz, boolean completed, String prog){
         mId = id;
@@ -25,6 +26,7 @@ public class ExerciseInfo {
         mTotalQuiz = totalQuiz;
         mCompleted = completed;
         mProgress = prog;
+        mDirty = false;
     }
 
     public int getId(){return mId;}
@@ -32,6 +34,15 @@ public class ExerciseInfo {
     public String getProgress(){return mProgress;}
     public int getTotalQuiz(){return mTotalQuiz;}
     public boolean getCompleted(){return mCompleted;}
+    public void setCompleted(){mCompleted = true;}
+    public void setProgress(String progress){
+        if(mProgress.equals(progress))
+            return;
+        mProgress = progress;
+        mDirty = true;
+    }
+    public boolean isDirty(){return mDirty;}
+    public void cleanDirty(){mDirty = false;}
 
     @Override
     public String toString() {
@@ -41,8 +52,8 @@ public class ExerciseInfo {
 
     public static ArrayList<ExerciseInfo> getDemon_Values (){
         ArrayList<ExerciseInfo> arr = new  ArrayList<ExerciseInfo>();
-        arr.add(new ExerciseInfo(19, "第 1 课练习", "Je me présente", true, 10, true, "10"));
-        arr.add(new ExerciseInfo(20, "第 2 课练习", "Tu es d’où ? ", true, 15, false, "5"));
+        arr.add(new ExerciseInfo(19, "第 1 课练习", "Je me présente", true, 10, false, "0"));
+        arr.add(new ExerciseInfo(20, "第 2 课练习", "Tu es d’où ? ", true, 15, true, "5"));
         arr.add(new ExerciseInfo(62, "第 3 课练习", "Vous habitez où ? Qu’est-ce que vous faites ?", true, 13, false, "1"));
         arr.add(new ExerciseInfo(63, "Reflets 补充练习题 01", "", false, 7, false, "0"));
         arr.add(new ExerciseInfo(66, "第 4 课练习", "François, 35 ans, marié, deux enfants, fan de football", true, 13, false, "0"));

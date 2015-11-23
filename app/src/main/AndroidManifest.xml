@@ -29,16 +29,6 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".ReportActivity"
-            android:label="@string/title_activity_report"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".QuizzActivity"
-            android:label="@string/title_activity_quizz"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz"
             android:theme="@style/AppTheme.NoActionBar" >
